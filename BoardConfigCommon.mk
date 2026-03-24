@@ -49,6 +49,7 @@ AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 TARGET_USES_QCOM_MM_AUDIO := true
+TARGET_PROVIDES_AUDIO_HAL := true
 
 # Boot
 BOARD_BOOT_HEADER_VERSION := 4
@@ -110,6 +111,12 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# VINTF
+DEVICE_MANIFEST_SKUS := canoe
+DEVICE_MANIFEST_CANOE_FILES := \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
