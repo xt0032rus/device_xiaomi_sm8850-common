@@ -114,11 +114,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(COMMON_PATH)/configs/vintf/compatibility_matrix.device.xml \
     $(COMMON_PATH)/configs/vintf/compatibility_matrix.xiaomi.xml
+
+DEVICE_MATRIX_FILE := \
+    $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
 DEVICE_MANIFEST_SKUS := canoe
 DEVICE_MANIFEST_CANOE_FILES := \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml \
+    $(COMMON_PATH)/configs/vintf/manifest_canoe.xml \
     hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
     hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
