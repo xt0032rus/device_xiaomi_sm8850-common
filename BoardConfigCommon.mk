@@ -82,6 +82,7 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.load_modules_parallel=true \
+    androidboot.hypervisor.protected_vm.supported=true \
     androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_IMAGE_NAME := Image
