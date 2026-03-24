@@ -83,7 +83,8 @@ BOARD_BOOTCONFIG := \
     androidboot.memcg=1 \
     androidboot.load_modules_parallel=true \
     androidboot.hypervisor.protected_vm.supported=true \
-    androidboot.usbcontroller=a600000.dwc3
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.selinux=permissive
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
