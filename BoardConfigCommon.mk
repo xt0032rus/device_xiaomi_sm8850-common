@@ -16,6 +16,7 @@ AB_OTA_PARTITIONS += \
     boot \
     vendor_boot \
     dtbo \
+    init_boot \
     vbmeta \
     vbmeta_system \
     odm \
@@ -52,6 +53,10 @@ TARGET_USES_QCOM_MM_AUDIO := true
 # Boot
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+# Init Boot
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := canoe
