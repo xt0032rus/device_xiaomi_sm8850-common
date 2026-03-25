@@ -20,7 +20,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/xiaomi/8850-common',
+    'device/xiaomi/sm8850-common',
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/8850',
     'hardware/xiaomi',
@@ -229,7 +229,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    '8850-common',
+    'sm8850-common',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
