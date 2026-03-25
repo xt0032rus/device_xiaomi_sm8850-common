@@ -249,5 +249,8 @@ ro.config.vc_call_vol_steps=11
 ro.config.alarm_vol_steps=15
 ro.config.system_vol_steps=15
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps
+
 # WLAN
 wifi.aware.interface=wifi-aware0
