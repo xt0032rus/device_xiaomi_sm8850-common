@@ -71,14 +71,11 @@ vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioplatformconverter.qti.so
 vendor/lib64/libav_miwnsencoder.so
-vendor/lib64/libbatterylistener.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdlbpreg.so
-vendor/lib64/libfmpal.so
-vendor/lib64/libhfp_pal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmis6.so
 vendor/lib64/libmisfpsop.so
@@ -125,25 +122,14 @@ vendor/etc/microphone_characteristics.xml
 vendor/etc/usecaseKvManager.xml
 
 # Audio FX modules
-vendor/lib64/soundfx/libaudiopreprocessing.so
-vendor/lib64/soundfx/libbundleaidl.so
 vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdlbvolaidl.so
-vendor/lib64/soundfx/libdownmixaidl.so
 vendor/lib64/soundfx/libdownmix.so
-vendor/lib64/soundfx/libdynamicsprocessingaidl.so
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libhwdapaidl.so
-vendor/lib64/soundfx/libldnhncr.so
-vendor/lib64/soundfx/libloudnessenhanceraidl.so
 vendor/lib64/soundfx/libmiwndnsprocessingaidl.so
 vendor/lib64/soundfx/libquasar.so
-vendor/lib64/soundfx/libreverbaidl.so
-vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libswgamedapaidl.so
 vendor/lib64/soundfx/libswspatializeraidl.so
-vendor/lib64/soundfx/libvisualizeraidl.so
 vendor/lib64/soundfx/libvisualizer.so
 
 # Batteryantiaging Service
