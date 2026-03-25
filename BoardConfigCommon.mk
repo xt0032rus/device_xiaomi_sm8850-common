@@ -124,10 +124,17 @@ DEVICE_MANIFEST_CANOE_FILES := \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(COMMON_PATH)/configs/vintf/manifest_canoe.xml \
     hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-     hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
+
+# Properties
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/properties/odm.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/properties/product.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/configs/properties/system.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
