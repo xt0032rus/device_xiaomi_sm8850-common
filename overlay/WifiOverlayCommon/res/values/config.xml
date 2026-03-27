@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- boolean indicating whether the WiFi chipset has 5GHz band support.
+         Note: This config is replacing the config_wifi_dual_band_support
+         since more bands may now be supported (such as 6GHz), the naming dual_band
+         is no longer indicative, and a separate config now exists for each band -->
+    <bool translatable="false" name="config_wifi5ghzSupport">true</bool>
+
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+     <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
+
+    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
+    <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
+
+    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
+    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
+
+    <!-- Boolean indicating that enable roaming between linked networks -->
+    <bool name="config_wifiEnableLinkedNetworkRoaming">false</bool>
+
+    <!-- Enable concurrent internet connectivity + internet connectivity
+         Note: this is conditional on the device supporting dual concurrent STAs. -->
+    <bool name="config_wifiMultiStaMultiInternetConcurrencyEnabled">true</bool>
+
+    <!-- Indicates that the framework should auto append lower bands to band configuration for
+         avoiding coexistence handling. For example: 5g only band will change to 2.4g|5g and
+         6g band will change to 2.4|5g|6g band -->
+    <bool name="config_wifiSoftapAutoAppendLowerBandsToBandConfigurationEnabled">false</bool>
+
+    <!-- Configure wifi tcp buffersizes in the form:
+         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers">524288,1048576,2097152,524288,1048576,4194304</string>
+
+    <!-- WiFi 6 (802.11ax) -->
+    <bool name="config_vendorWifi11axReadySupport">true</bool>
+    <bool name="config_wifiSoftapIeee80211axSupported">true</bool>
+    <bool name="config_wifi_report_he_ready">true</bool>
+
+    <!-- WiFi 6GHz (6E/7) -->
+    <bool name="config_wifi6ghzSupport">true</bool>
+    <bool name="config_wifiSoftap6ghzSupported">true</bool>
+
+    <!-- WiFi 5GHz -->
+    <bool name="config_wifi5ghzSupport">true</bool>
+
+    <!-- SoftAP (Hotspot) -->
+    <bool name="config_wifiSoftapAcsIncludeDfs">true</bool>
+    <bool name="config_wifiSoftapAcsSupported">true</bool>
+    <bool name="config_wifi_softap_acs_supported">true</bool>
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+    <bool name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
+    <bool name="config_wifiSoftapHeSuBeamformerSupported">true</bool>
+    <bool name="config_wifiSoftApDynamicCountryCodeUpdateSupported">true</bool>
+</resources>
