@@ -136,6 +136,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-V1-ndk.vendor \
     android.hardware.drm-service.clearkey
 
+# Euicc
+PRODUCT_PACKAGES += \
+    XiaomiEuicc
+    
 # Fastboot
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery \
