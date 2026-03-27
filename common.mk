@@ -28,7 +28,6 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 # SHIPPING API
 BOARD_SHIPPING_API_LEVEL := 202404
 PRODUCT_SHIPPING_API_LEVEL := 36
-PRODUCT_SHIPPING_VENDOR_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
