@@ -95,20 +95,14 @@ vendor/lib64/libagmipcservice.so
 vendor/lib64/libagmmixer.so
 
 # Audio Config
-odm/etc/audio/audio_module_config_primary.xml
-odm/etc/audio/sku_canoe_qssi/audio_policy_configuration.xml
 odm/etc/audio/sku_canoe/adsp_sleep_monitor.conf
 odm/etc/backend_conf.xml
 odm/etc/usecaseKvManager.xml
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/audio/audio_module_config_primary.xml
-vendor/etc/audio/sku_canoe_qssi/audio_policy_configuration.xml
 vendor/etc/audio/sku_canoe/adsp_sleep_monitor.conf
 vendor/etc/audio/sku_canoe/audio_effects_config_stub.xml
 vendor/etc/audio/sku_canoe/audio_effects_config.xml
 vendor/etc/audio/sku_canoe/audio_effects.conf
 vendor/etc/audio/sku_canoe/audio_effects.xml
-vendor/etc/audio/sku_canoe/audio_policy_configuration.xml
 vendor/etc/audio/sku_canoe/mixer_paths_canoe_cdp.xml
 vendor/etc/audio/sku_canoe/mixer_paths_canoe_mtp_wsa884x.xml
 vendor/etc/audio/sku_canoe/mixer_paths_canoe_mtp.xml
