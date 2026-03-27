@@ -73,8 +73,7 @@ BOARD_BOOTCONFIG := \
     androidboot.vendor.qspa=true \
     androidboot.load_modules_parallel=true \
     androidboot.hypervisor.protected_vm.supported=0 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.selinux=permissive
+    androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
