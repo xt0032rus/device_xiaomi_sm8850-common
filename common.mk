@@ -209,7 +209,7 @@ $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/qcom-batte
 
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare-service.default
-    
+
 # Network
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
@@ -276,6 +276,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     init.xiaomi.rc \
+    init.logcat.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \

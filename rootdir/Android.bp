@@ -44,3 +44,10 @@ prebuilt_etc {
     sub_dir: "init/hw",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.logcat.rc",
+    src: "etc/init.logcat.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
