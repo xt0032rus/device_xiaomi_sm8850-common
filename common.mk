@@ -90,6 +90,7 @@ PRODUCT_PACKAGES += \
     libpaleventnotifier \
     libreverbaidl \
     libreverbwrapper \
+    libsoundtriggerhal.qti \
     libvisualizeraidl \
     libvui_intf
 
