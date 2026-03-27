@@ -120,8 +120,8 @@ DEVICE_MANIFEST_SKUS := canoe
 DEVICE_MANIFEST_CANOE_FILES := \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(COMMON_PATH)/configs/vintf/manifest_canoe.xml \
-    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+    hardware/qcom-caf/sm8750/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
+    hardware/qcom-caf/sm8750/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true

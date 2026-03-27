@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
     libvisualizeraidl \
     libvui_intf
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8750/audio/primary-hal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_module_config_primary.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_module_config_primary.xml \
