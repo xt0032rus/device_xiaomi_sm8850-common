@@ -59,16 +59,17 @@ vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
-vendor/lib64/android.media.audio.common.types-V4-ndk.so
-vendor/lib64/hw/libaudiocorehal.default.so
-vendor/lib64/hw/libaudiocorehal.qti.so
-vendor/lib64/hw/libaudioeffecthal.qti.so
+vendor/lib64/hw/libaudiocorehal.default.so;REQUIRED=manifest_audiocorehal_default.xml;DISABLE_DEPS
+vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
+vendor/lib64/hw/libaudioeffecthal.qti.so;REQUIRED=audioeffectservice_qti.xml;DISABLE_DEPS
+vendor/lib64/libaudioroute.so:vendor/lib64/libaudioroute-xiaomi.so;FIX_SONAME
+vendor/lib64/libtensorflowlite_c.so:vendor/lib64/libtensorflowlite_c_vendor.so;FIX_SONAME
 vendor/lib64/libadm.so
 vendor/lib64/libar-pal.so
 vendor/lib64/libarmemlog.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
-vendor/lib64/libaudioplatformconverter.qti.so
+vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
 vendor/lib64/libav_miwnsencoder.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
@@ -82,8 +83,7 @@ vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisight.so
 vendor/lib64/libmisops.so
 vendor/lib64/libpal_net_if.so
-vendor/lib64/libqtigefar.so
-vendor/lib64/libtensorflowlite_c.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
 vendor/lib64/libtiantongpal.so
 vendor/lib64/libVoiceSdk.so
 odm/lib64/libwindns.so;DISABLE_CHECKELF
@@ -112,7 +112,7 @@ vendor/etc/audio/sku_canoe/resourcemanager_canoe_cdp.xml
 vendor/etc/audio/sku_canoe/resourcemanager_canoe_mtp.xml
 vendor/etc/audio/sku_canoe/resourcemanager_canoe_qrd_wsa884x.xml
 vendor/etc/audio/sku_canoe/resourcemanager_canoe_qrd.xml
-vendor/etc/audio/vendor_audio_interfaces.xml
+vendor/etc/audio/vendor_audio_interfaces.xml:vendor/etc/vendor_audio_interfaces.xml
 vendor/etc/card-defs.xml
 vendor/etc/Hapticsconfig.xml
 vendor/etc/kvh2xml.xml
@@ -122,14 +122,31 @@ vendor/etc/usecaseKvManager.xml
 
 # Audio FX modules
 vendor/lib64/soundfx/libbundlewrapper.so
-vendor/lib64/soundfx/libdlbvolaidl.so
 vendor/lib64/soundfx/libdownmix.so
-vendor/lib64/soundfx/libhwdapaidl.so
-vendor/lib64/soundfx/libmiwndnsprocessingaidl.so
-vendor/lib64/soundfx/libquasar.so
-vendor/lib64/soundfx/libswgamedapaidl.so
-vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/soundfx/libvisualizer.so
+vendor/lib64/soundfx/libbundleaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdownmixaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdynamicsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/liblvacfsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcompostprocbundle.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvisualizer.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvoiceprocessing.so;DISABLE_DEPS
+vendor/lib64/soundfx/libreverbaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
+vendor/lib64/soundfx/libhwdapaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libmiwndnsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libquasar.so;DISABLE_DEPS
+vendor/lib64/soundfx/libswgamedapaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libswspatializeraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdlbvolaidl.so;DISABLE_DEPS
+
+# Audio AIDL Deps
+vendor/lib64/android.hardware.audio.core.sounddose-V2-ndk.so:vendor/lib64/android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so;FIX_SONAME
+vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_xiaomi.so;FIX_SONAME;DISABLE_CHECKELF
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_xiaomi.so;FIX_SONAME
+vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_xiaomi.so;FIX_SONAME;DISABLE_CHECKELF
 
 # Batteryantiaging Service
 odm/etc/charger/BAA_config_common.json
@@ -151,15 +168,14 @@ vendor/etc/init/hw/init.batterysecret.rc
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti
-vendor/etc/init/android.hardware.bluetooth@aidl-service-qti-debug.rc
+vendor/etc/init/android.hardware.bluetooth@aidl-service-qti-debug.rc:vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc
 vendor/etc/vintf/manifest/bluetooth_hci.xml
 vendor/etc/vintf/manifest/bluetooth_sar.xml
 vendor/etc/vintf/manifest/bluetooth-finder.xml
 vendor/etc/vintf/manifest/bt_lmp_event-saidl.xml
 vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml
-vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so
-vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so;DISABLE_CHECKELF
 vendor/lib64/hw/android.hardware.bluetooth.lmp_event-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
@@ -172,9 +188,9 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth.xpanprovider-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
 
 # Bluetooth (A2DP)
-vendor/lib64/btaudio_offload_if.so
+vendor/lib64/btaudio_offload_if.so;DISABLE_CHECKELF
 vendor/lib64/lib_bt_lhdc.so
-vendor/lib64/libbluetooth_audio_session_aidl_qti.so
+vendor/lib64/libbluetooth_audio_session_aidl_qti.so;DISABLE_CHECKELF
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbt-hidlclient.so
@@ -260,7 +276,7 @@ vendor/lib64/libsysmon_cdsp_skel.so
 vendor/etc/charger_diag.cfg
 
 # CIT Sensor
-odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl;DISABLE_CHECKELF
+odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl;DISABLE_DEPS
 odm/etc/cit_param_config.json
 odm/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice.aidl.xml
@@ -467,7 +483,6 @@ vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_tm.so
 
 # Display HWC
-vendor/bin/hw/vendor.qti.hardware.display.composer-service;DISABLE_CHECKELF
 vendor/bin/qdcmss
 vendor/bin/ubwcconvert
 vendor/etc/init/qdcmss.rc
@@ -479,7 +494,6 @@ vendor/lib64/libdpps.so
 vendor/lib64/libfeutils.so
 vendor/lib64/libgame_enhance.so
 vendor/lib64/libhistogram.so
-vendor/lib64/libmemutils.so
 vendor/lib64/libqdcm-algo.so
 vendor/lib64/libqdcm-json-mode-parser.so
 vendor/lib64/libqdcm-mode-parser.so
@@ -576,7 +590,7 @@ vendor/lib64/libdolbydecoderprocessor.so
 vendor/lib64/libdolbyeglcore.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libqcodec2_dolbydecoderfilter.so
-vendor/lib64/libswspatializeraidl_ext.so
+vendor/lib64/libswspatializeraidl_ext.so;DISABLE_CHECKELF
 vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/vendor.dolby.dms-V1-ndk.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
@@ -749,7 +763,6 @@ odm/lib64/libidprovision.so
 odm/lib64/libsecid.so
 
 # IMS
-system/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
@@ -770,6 +783,7 @@ system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libdiag_system.so
+vendor/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ims.datachannelservice-V1-ndk.so
@@ -831,7 +845,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.uceaidlservice-V1-ndk.so
-vendor/lib64/vendor.qti.diaghal-V1-ndk.so;MODULE_SUFFIX=-vendor
 
 # Init
 vendor/bin/init.class_main.sh
@@ -842,6 +855,10 @@ vendor/bin/init.qcom.sh
 
 # IR
 odm/lib64/hw/consumerir.qcom.so
+
+# Hotword Enrollment
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
+system_ext/framework/com.android.hotwordenrollment.common.util.jar:product/framework/com.android.hotwordenrollment.common.util.jar
 
 # Kernel
 vendor/bin/init.kernel.init_boot-memory.sh
@@ -881,9 +898,9 @@ vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
-vendor/etc/media_codecs_performance_canoe_v1_vendor.xml
+vendor/etc/media_codecs_performance_canoe_v1_vendor.xml:vendor/etc/media_codecs_performance_canoe.xml;TRYSRCFIRST
 vendor/etc/media_codecs_performance_canoe_v1.xml
-vendor/etc/media_codecs_canoe_v1_vendor.xml
+vendor/etc/media_codecs_canoe_v1_vendor.xml:vendor/etc/media_codecs_canoe.xml;TRYSRCFIRST
 vendor/etc/media_codecs_canoe_v1.xml
 vendor/etc/media_codecs.xml
 vendor/etc/media_canoe_v1/video_system_specs.json
@@ -907,7 +924,7 @@ vendor/lib64/libqc2audio_utils.so
 vendor/lib64/libqc2vppfilter.so
 vendor/lib64/libqcodec2_basecodec.so
 vendor/lib64/libqcodec2_base.so
-vendor/lib64/libqcodec2_core.so
+vendor/lib64/libqcodec2_core.so;DISABLE_DEPS
 vendor/lib64/libqcodec2_cvpfilter.so
 vendor/lib64/libqcodec2_filterbase.so
 vendor/lib64/libqcodec2_hooks.so
@@ -1102,6 +1119,7 @@ vendor/lib64/libqcc_file_agent.so
 vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
+system_ext/lib64/libwfduibcsrcinterface.so
 
 # QCOM system daemon
 vendor/lib64/libsubsystem_control.so
@@ -1493,7 +1511,7 @@ vendor/etc/init/vendor.qti.sla.service@2.0-service.rc
 vendor/etc/sla/slad.conf
 vendor/lib64/vendor.qti.sla.service-V1-ndk.so
 
-# Soter
+# Soterf
 mi_ext/product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
 vendor/bin/vendor.qti.hardware.soter-provision
 vendor/bin/hw/vendor.qti.hardware.soter-service
@@ -1611,6 +1629,9 @@ vendor/etc/wifi/wpa_supplicant.conf
 vendor/lib64/libWlanServiceJni.so
 
 # Wifi Display
+system/framework/WfdCommon.jar;BOOT_JAR
+system_ext/lib64/libwfdclient.so
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
 vendor/bin/wifidisplayhalservice
@@ -1624,6 +1645,7 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml
 vendor/etc/wfdconfig.xml
 vendor/lib64/libFileMux_proprietary.so
 vendor/lib64/libmmosal_vendor.so
+system_ext/lib64/libmmosal.so
 vendor/lib64/libmmrtpdecoder_vendor.so
 vendor/lib64/libmmrtpencoder_vendor.so
 vendor/lib64/libwfdaac_vendor.so
@@ -1647,8 +1669,97 @@ vendor/lib64/libwfduibcsinkinterface_vendor.so
 vendor/lib64/libwfduibcsrc_vendor.so
 vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+system_ext/lib64/libwfdsinksm.so
+system_ext/lib64/libwfdcommonutils.so
+system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfdmminterface.so
+system_ext/lib64/libwfddisplayconfig.so;DISABLE_DEPS
+system_ext/lib64/libwfdrtsp.so
+system_ext/lib64/libwfduibcinterface.so
+system_ext/lib64/libwfdmmsink.so
+system_ext/lib64/libmmrtpencoder.so
+system_ext/lib64/libmmrtpdecoder.so
+system_ext/lib64/libwfduibcsinkinterface.so
+system_ext/lib64/libwfduibcsrc.so
+system_ext/lib64/libwfduibcsink.so
+system_ext/lib64/libmmparser_lite.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 
 # Xiaomi MAC address
 vendor/bin/nv_mac
+
+vendor/lib64/vendor.qti.hardware.hexlp-V2-ndk.so
+vendor/lib64/libloadtrusteduiapp.so
+vendor/lib64/libTUITAVMInterface.so
+vendor/lib64/vendor.qti.data.factoryservice-V2-ndk.so
+vendor/lib64/libsensinghubapi.so
+vendor/lib64/libsensinghubapi-prop.so
+vendor/lib64/libsensinghubsession.so
+vendor/lib64/libsuidlookup.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk.so
+vendor/lib64/libhdr_als_adapter.so
+odm/lib64/libgf_hal.so
+odm/lib64/nfc_nci.st21nfc.st.so
+vendor/lib64/vendor.qti.ImsRtpService-V2-ndk.so
+system_ext/lib64/vendor.xiaomi.hw.touchfeature-V1-ndk.so
+vendor/lib64/libprovisioner_qti.so
+vendor/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so
+vendor/lib64/libmodem_device_ids.so
+vendor/lib64/liblx-osal.so
+vendor/lib64/libqservice.so
+vendor/lib64/libAVFVirtClientInterface.so
+vendor/lib64/libmemutils.so
+vendor/lib64/libQshSession.so
+vendor/lib64/libBlAlgointf.so
+odm/lib64/libframemasterintf.so
+odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
+vendor/lib64/libcamximageformatutils.so
+vendor/lib64/libcom.qti.chinodeutils.so
+vendor/lib64/libQshQmiIDL.so
+vendor/lib64/libmapperutils.so
+vendor/lib64/hw/mapper.qti.so
+vendor/lib64/libperf-thermalprovider.so
+vendor/lib64/vendor.qti.hardware.bluetooth.btavsprovider-V1-ndk.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth.btavsprovider-impl-qti.so
+vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
+vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so
+vendor/lib64/libqti-s3tf.so
+vendor/lib64/libqti-engine-loader.so
+vendor/lib64/libxiaomi_aidl_radio.so
+vendor/lib64/libxiaomi_aidl_radiocdc.so
+vendor/lib64/libcamerabuffer.so
+vendor/lib64/libcamxcommonutils.so
+vendor/lib64/hw/libbcs.so
+vendor/lib64/com.xiaomi.customlogger.so
+vendor/lib64/vendor.xiaomi.hardware.radio-V1-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.radio.cdc-V1-ndk.so
+vendor/lib64/com.xiaomi.camdfx.so
+vendor/lib64/libcamxsettingsmanager.so
+odm/lib64/libframemaster.so
+vendor/lib64/libfastmessage.so
+vendor/lib64/vendor.qti.hardware.radio.ims-V20-ndk.so
+odm/lib64/libnvticcontroller.so
+vendor/lib64/libchilog.so
+odm/lib64/vendor.novatek.hardware.visdisplaysrv-V1-ndk.so
+vendor/lib64/libcamxcoreutils.so
+vendor/lib64/libcamxmetadata.so
+vendor/lib64/libcamxsocketserverutil.so
+vendor/lib64/libmetatagwrapper.so
+vendor/lib64/libcamxods.so
+vendor/lib64/libcamxasyncdumpmanager.so
+vendor/lib64/com.xiaomi.stubv1.chi.so
+vendor/lib64/libiqdbgmgr.so
+vendor/lib64/libcom.xiaomi.debug.so
+vendor/lib64/com.qti.sfw.settings.so
+vendor/lib64/libcamlog.so
+vendor/lib64/libcom.xiaomi.threadpool.so
+vendor/lib64/libcameraopt.so
+vendor/lib64/libcameraopt_stub.so
+odm/lib64/libabnormal_img_dectect.so
+vendor/lib64/libcamera.xiaomi.catchlog.so
+vendor/lib64/libbitmlenginev2.so
+vendor/lib64/libcamxcsl.so
+vendor/lib64/libsv.so
+vendor/lib64/libsv_common.so
+vendor/lib64/libcamxdumpinforecorder.so

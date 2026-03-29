@@ -26,8 +26,8 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
 # SHIPPING API
-BOARD_SHIPPING_API_LEVEL := 202404
-PRODUCT_SHIPPING_API_LEVEL := 36
+BOARD_SHIPPING_API_LEVEL := 202504
+PRODUCT_SHIPPING_API_LEVEL += 36
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -58,7 +58,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audioadsprpcd \
     audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -72,28 +71,20 @@ PRODUCT_PACKAGES += \
     libaudiochargerlistener \
     libaudiopreprocessing \
     libaudioserviceexampleimpl \
-    libbatterylistener \
     libbundleaidl \
-    libcustomva_intf \
     libldnhncr \
     libdownmixaidl \
     libdynproc \
     libdynamicsprocessingaidl \
     libeffectproxy \
-    libhfp_pal \
-    libhotword_intf \
-    libfmpal \
     libloudnessenhanceraidl \
     libpalclient \
-    libpalipcservice \
-    libpaleventnotifier \
     libreverbaidl \
     libreverbwrapper \
     libsoundtriggerhal.qti \
-    libvisualizeraidl \
-    libvui_intf
+    libvisualizeraidl
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8750/audio/primary-hal
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8850/audio/primary-hal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_module_config_primary.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_module_config_primary.xml \
@@ -184,12 +175,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
-
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    IPACM_Filter_cfg.xml
 
 # IR Blaster
 PRODUCT_PACKAGES += \
