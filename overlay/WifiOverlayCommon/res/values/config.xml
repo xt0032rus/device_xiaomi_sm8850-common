@@ -40,14 +40,9 @@
     <bool name="config_wifi6ghzSupport">true</bool>
     <bool name="config_wifiSoftap6ghzSupported">true</bool>
 
-    <!-- WiFi 5GHz -->
-    <bool name="config_wifi5ghzSupport">true</bool>
-
     <!-- SoftAP (Hotspot) -->
     <bool name="config_wifiSoftapAcsIncludeDfs">true</bool>
     <bool name="config_wifiSoftapAcsSupported">true</bool>
-    <bool name="config_wifi_softap_acs_supported">true</bool>
-    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
     <bool name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
     <bool name="config_wifiSoftapHeSuBeamformerSupported">true</bool>
     <bool name="config_wifiSoftApDynamicCountryCodeUpdateSupported">true</bool>

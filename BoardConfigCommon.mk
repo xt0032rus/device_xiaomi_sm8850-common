@@ -37,15 +37,25 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := oryon
 
 # Audio
-BOARD_SUPPORTS_OPENSOURCE_STHAL := true
-
-# Boot
-BOARD_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+AUDIO_FEATURE_ENABLED_DLKM := true
+AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
+AUDIO_FEATURE_ENABLED_GKI := true
+AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
+AUDIO_FEATURE_ENABLED_MCS := true
+AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
+BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_USES_ALSA_AUDIO := true
+TARGET_PROVIDES_AUDIO_HAL := true
+TARGET_PROVIDES_LIBAGM := true
+TARGET_PROVIDES_LIBAR_PAL := true
 
 # Init Boot
 BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
+# Boot
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := canoe
@@ -59,7 +69,6 @@ TARGET_BOARD_PLATFORM := canoe
 BOARD_KERNEL_PAGESIZE   := 4096
 BOARD_KERNEL_BASE       := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_GLOBAL_CFLAGS += -Wno-error=#warnings
 
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
@@ -70,10 +79,10 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
+    androidboot.hypervisor.protected_vm.supported=0 \
+    androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
     androidboot.vendor.qspa=true \
-    androidboot.load_modules_parallel=true \
-    androidboot.hypervisor.protected_vm.supported=0 \
     androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_IMAGE_NAME := Image
@@ -87,6 +96,8 @@ BOARD_DTBOIMG_PARTITION_SIZE := 23068672
 BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_PVMFW_IMAGE_PARTITION_SIZE := 1048576
+BOARD_AVB_PVMFW_ADD_HASH_FOOTER_ARGS := --partition_size $(BOARD_PVMFW_IMAGE_PARTITION_SIZE)
 
 BOARD_SUPER_PARTITION_SIZE := 11811160064
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
@@ -120,9 +131,7 @@ DEVICE_MATRIX_FILE := \
 DEVICE_MANIFEST_SKUS := canoe
 DEVICE_MANIFEST_CANOE_FILES := \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml \
-    $(COMMON_PATH)/configs/vintf/manifest_canoe.xml \
-    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-    hardware/qcom-caf/sm8850/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+    $(COMMON_PATH)/configs/vintf/manifest_canoe.xml
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
